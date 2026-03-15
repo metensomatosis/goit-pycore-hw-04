@@ -1,5 +1,8 @@
-def get_cats_info(path):
-    cats = []
+from typing import List, Dict
+
+
+def get_cats_info(path: str) -> List[Dict[str, str]]:
+    cats: List[Dict[str, str]] = []
 
     try:
         with open(path, "r", encoding="utf-8") as file:
@@ -24,7 +27,8 @@ def get_cats_info(path):
     return cats
 
 
-cats_info = get_cats_info("cats_file.txt")
+if __name__ == "__main__":
+    cats_info = get_cats_info("cats_file.txt")
 
-for cat in cats_info:
-    print(cat)
+    for cat in cats_info:
+        print(cat)
